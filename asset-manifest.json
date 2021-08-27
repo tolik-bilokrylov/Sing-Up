@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Sing-Up/static/css/main.f11c4a9a.chunk.css",
+    "main.js": "/Sing-Up/static/js/main.5147cc8a.chunk.js",
+    "main.js.map": "/Sing-Up/static/js/main.5147cc8a.chunk.js.map",
+    "runtime-main.js": "/Sing-Up/static/js/runtime-main.0e4bb534.js",
+    "runtime-main.js.map": "/Sing-Up/static/js/runtime-main.0e4bb534.js.map",
+    "static/js/2.e00bfa93.chunk.js": "/Sing-Up/static/js/2.e00bfa93.chunk.js",
+    "static/js/2.e00bfa93.chunk.js.map": "/Sing-Up/static/js/2.e00bfa93.chunk.js.map",
+    "index.html": "/Sing-Up/index.html",
+    "static/css/main.f11c4a9a.chunk.css.map": "/Sing-Up/static/css/main.f11c4a9a.chunk.css.map",
+    "static/js/2.e00bfa93.chunk.js.LICENSE.txt": "/Sing-Up/static/js/2.e00bfa93.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e4bb534.js",
+    "static/js/2.e00bfa93.chunk.js",
+    "static/css/main.f11c4a9a.chunk.css",
+    "static/js/main.5147cc8a.chunk.js"
+  ]
+}
