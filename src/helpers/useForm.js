@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 
 const useForm = ( callback, validate ) => {
   const [values, setValues] = useState( {
-    gender: '',
     email: '',
     password: '',
     password2: ''
   } );
+
   const [errors, setErrors] = useState( {} );
   const [isSubmitting, setIsSubmitting] = useState( false );
 
@@ -16,10 +16,6 @@ const useForm = ( callback, validate ) => {
       ...values,
       [name]: value
     } );
-  };
-
-  const handleRadioChange = e => {
-    setValues( e.target.value )
   };
 
   const handleSubmit = e => {
@@ -37,7 +33,7 @@ const useForm = ( callback, validate ) => {
     },
   );
 
-  return { handleChange, handleRadioChange, handleSubmit, values, errors };
+  return { handleChange, handleSubmit, values, errors };
 };
 
 export default useForm;
