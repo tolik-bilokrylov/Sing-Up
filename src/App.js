@@ -1,6 +1,6 @@
 import React from 'react';
 // import Form from './components/Form/Form';
-import FormSignUp1 from './components/FormSignUp1/FormSingUp1';
+import FormSignUp from './components/FormSignUp1/FormSingUp';
 import './App.scss';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div
       className="container"
     >
-      <FormSignUp1 />
+      <FormSignUp />
       {/* <Form /> */}
     </div>
   );

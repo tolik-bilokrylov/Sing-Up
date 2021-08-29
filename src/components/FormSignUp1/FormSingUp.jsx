@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import Form from './components/Form/Form';
-
 import { Formik } from "formik";
 import classNames from "classnames";
 import * as yup from "yup";
@@ -22,10 +20,10 @@ function FormSignUp1() {
   return (
     <>
       <img src={logo} alt="logo" />
-      <h1 className="title">
+      <h1 className="container__title">
         Sign Up with email
       </h1>
-      <div className="form__container">
+      <div className="container__form">
         <Formik
           initialValues={{
             gender: "",
@@ -61,15 +59,15 @@ function FormSignUp1() {
                   />
                   <label
                     className={classNames("form__radio-btn", {
-                      "checked": values.gender === "male",
-                      "default": values.gender !== "male"
+                      "form__radio-btn--checked": values.gender === "male",
+                      "form__radio-btn--default": values.gender !== "male"
                     })}
                     htmlFor="radio-1"
                   >
                     <svg
-                      className={classNames("icon", {
-                        "checked1": values.gender === "male",
-                        "default1": values.gender !== "male"
+                      className={classNames("form__radio-btn__icon", {
+                        "form__radio-btn__icon--checked": values.gender === "male",
+                        "form__radio-btn__icon--default": values.gender !== "male"
                       })}
                       width="32"
                       height="32"
@@ -92,15 +90,15 @@ function FormSignUp1() {
                   />
                   <label
                     className={classNames("form__radio-btn", {
-                      "checked": values.gender === "female",
-                      "default": values.gender !== "female"
+                      "form__radio-btn--checked": values.gender === "female",
+                      "form__radio-btn--default": values.gender !== "female"
                     })}
                     htmlFor="radio-2"
                   >
                     <svg
-                      className={classNames("icon", {
-                        "checked1": values.gender === "female",
-                        "default1": values.gender !== "female"
+                      className={classNames("form__radio-btn__icon", {
+                        "form__radio-btn__icon--checked": values.gender === "female",
+                        "form__radio-btn__icon--default": values.gender !== "female"
                       })}
                       width="20"
                       height="32"
@@ -123,14 +121,14 @@ function FormSignUp1() {
                   />
                   <label
                     className={classNames("form__radio-btn", {
-                      "checked": values.gender === "other",
-                      "default": values.gender !== "other"
+                      "form__radio-btn--checked": values.gender === "other",
+                      "form__radio-btn--default": values.gender !== "other"
                     })}
                     htmlFor="radio-3">
                     <svg
-                      className={classNames("icon", {
-                        "checked1": values.gender === "other",
-                        "default1": values.gender !== "other"
+                      className={classNames("form__radio-btn__icon", {
+                        "form__radio-btn__icon--checked": values.gender === "other",
+                        "form__radio-btn__icon--default": values.gender !== "other"
                       })}
                       width="30"
                       height="32"

@@ -24,183 +24,191 @@ body {
   border-radius: 16px;
   margin: 0 auto;
   padding: 29px 35px 35px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 24px auto 5px;
+  }
+  
+  &__form {
+    display: flex;
+    text-align: start;
+  }
 }
 
-.title {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 24px auto 5px;
+.form {
+  &__label {
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 12px;
+  }
+  
+  &__radio {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+
+    &-btn input[type=radio] {
+      display: none;
+    }
+    
+    &-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: 156px;
+      height: 100px;
+      cursor: pointer;
+      border-radius: 16px;
+
+      &--default {
+        color: $c-main;
+        border: 1px solid $c-border;
+        transition: all 0.3s;
+      }
+      
+      &--checked {
+        color: $c-active;
+        border: 1px solid $c-active;
+        transition: all 0.3s;
+      }
+
+      &__icon {
+        margin-bottom: 8px;
+
+        &--default {
+          fill: $c-main;
+          transition: fill 0.3s;
+        }
+        
+        &--checked {
+          fill: $c-active;
+          transition: fill 0.3s;
+        }
+      }
+    }
+  }
+
+  &__inputs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  &__input {
+    width: 500px;
+    height: 70px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 24px 25px;
+
+    &:focus {
+      border: 1px solid $c-active;
+    }
+
+    &-norm {
+      border: 1px solid $c-border;
+    }
+    
+    &-err {
+      border: 1px solid $c-error;
+    }
+
+    &-error {
+      color: $c-error;
+    }
+    
+
+    &-icon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 85px;
+      right: 24px;
+      z-index: 1000;
+      cursor: pointer;
+      background: inherit;
+      border: none;
+    }
+
+    &-btn {
+      width: 500px;
+      height: 70px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      background-color: $c-active;
+      border-radius: 16px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #4DB252;;
+      }
+      
+      &:active {
+        background-color: #318636;
+      }
+    }
+  }
 }
 
-.form__container {
-  display: flex;
-  text-align: start;
-}
-
-
-.form__label {
-  font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 12px;
-}
-
-.form__radio {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: space-between;
-}
-
-.form__radio-btn input[type=radio] {
-  display: none;
-}
-
-.form__radio-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  width: 156px;
-  height: 100px;
-  cursor: pointer;
-  border-radius: 16px;
-}
-
-.default {
-  color: $c-main;
-  border: 1px solid $c-border;
-  transition: all 0.3s;
-}
-
-.checked {
-  color: $c-active;
-  border: 1px solid $c-active;
-  transition: all 0.3s;
-}
-
-.icon {
-  margin-bottom: 8px;
-}
-
-.default1 {
-  fill: $c-main;
-  transition: fill 0.3s;
-}
-
-.checked1 {
-  fill: $c-active;
-  transition: fill 0.3s;
-}
-
-.form__inputs {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-}
-
-.form__input-icon {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 85px;
-  right: 24px;
-  z-index: 1000;
-  cursor: pointer;
-  background: inherit;
-  border: none;
-}
-
-.form__input {
-  width: 500px;
-  height: 70px;
-  outline: none;
-  box-sizing: border-box;
-  border-radius: 16px;
-  padding: 24px 25px;
-}
-
-.form__input-norm {
-  border: 1px solid $c-border;
-}
-
-.form__input-err {
-  border: 1px solid $c-error;
-}
-
-.form__input:focus {
-  border: 1px solid $c-active;
-}
-
-.form__input-error {
-  color: $c-error;
-}
-
-.form__input-btn {
-  width: 500px;
-  height: 70px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: $c-active;
-  border-radius: 16px;
-  margin-top: 20px;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.form__input-btn:hover {
-  background-color: $c-active;
-}
-
-.form__input-btn:active {
-  background-color: #318636;
-}
-
-.footer__input-login {
-  margin-bottom: 16px;
-}
-
-.footer__input-link {
-  font-weight: 700;
-  color: $c-active;
+.footer {
+  &__input-login {
+    margin-bottom: 16px;
+  }
+  
+  &__input-link {
+    font-weight: 700;
+    color: $c-active;
+  }
 }
 
 @media (max-width: 550px) {
-  .form__radio-btn {
-    width: 90px;
-    height: 80px;
-  }
-  .form__input {
-    width: 308px;
-    height: 50px;
-  }
+  .form {
+    &__radio-btn {
+      width: 90px;
+      height: 80px;
+    }
+    &__input {
+      width: 308px;
+      height: 50px;
 
-  .form__input-btn {
-    width: 308px;
-    height: 50px;
-  }
+      &-btn {
+        width: 308px;
+        height: 50px;
+      }
 
-  .password-toogle-icon {
-    top: 75px;
-    right: 17px;
+      &-icon {
+        top: 75px;
+        right: 17px;
+      }
+    }
   }
 }
 
 @media (max-width: 350px) {
-  .form__radio-btn {
-    width: 80px;
-    height: 70px;
-  }
-  .form__input {
-    width: 270px;
-    height: 45px;
-  }
+  .form {
+    &__radio-btn {
+      width: 80px;
+      height: 70px;
+    }
+    &__input {
+      width: 270px;
+      height: 45px;
 
-  .form__input-btn {
-    width: 270px;
-    height: 45px;
+      &-btn {
+        width: 270px;
+        height: 45px;
+      }
+    }
   }
 }
