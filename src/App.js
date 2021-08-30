@@ -1,6 +1,5 @@
 import React from 'react';
-// import Form from './components/Form/Form';
-import FormSignUp from './components/FormSignUp1/FormSingUp';
+import FormSignUp from './components/FormSignUp/FormSingUp';
 import './App.scss';
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
       className="container"
     >
       <FormSignUp />
-      {/* <Form /> */}
     </div>
   );
 }

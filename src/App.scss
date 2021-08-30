@@ -4,6 +4,10 @@ $c-border: #C1C1C1;
 $c-active: #3C9C41;
 $c-error: #D23737;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: $c-main;
@@ -104,9 +108,9 @@ body {
     width: 500px;
     height: 70px;
     outline: none;
-    box-sizing: border-box;
     border-radius: 16px;
     padding: 24px 25px;
+    border: 1px solid $c-border;
 
     &:focus {
       border: 1px solid $c-active;
@@ -118,6 +122,7 @@ body {
     
     &-err {
       border: 1px solid $c-error;
+      color: $c-error;
     }
 
     &-error {
@@ -131,7 +136,7 @@ body {
       height: 30px;
       top: 85px;
       right: 24px;
-      z-index: 1000;
+      z-index: 100;
       cursor: pointer;
       background: inherit;
       border: none;
@@ -165,10 +170,26 @@ body {
   &__input-login {
     margin-bottom: 16px;
   }
-  
+
   &__input-link {
     font-weight: 700;
     color: $c-active;
+  }
+  
+  &__input-link--modal {
+    position: relative;
+    font-weight: 700;
+    color: $c-active;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $c-active;
+    }
   }
 }
 

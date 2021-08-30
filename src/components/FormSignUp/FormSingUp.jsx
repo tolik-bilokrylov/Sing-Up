@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { ModalInfo } from "../ModalInfo/ModalInfo";
 import { Formik } from "formik";
 import classNames from "classnames";
 import * as yup from "yup";
-import logo from '../../images/logo.png';
+import logo from "../../images/logo.png";
 import eye from "../../images/eye.svg";
 import eyeSlash from "../../images/eye-slash.svg";
 
-function FormSignUp1() {
+function FormSignUp() {
   const [visiblePassword, setVisiblityPassword] = useState(false);
   const [visibleConfirmPassword, setVisiblityConfirmPassword] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
+
   const validationsShema = yup.object().shape({
     email: yup.string().email("Email address is invalid").required("Email required"),
     password: yup.string().required('This field is required.')
@@ -16,7 +19,8 @@ function FormSignUp1() {
     confirmPassword: yup.string()
       .oneOf([yup.ref('password')], 'Password do not match')
       .required('This field is required.'),
-  })
+  });
+
   return (
     <>
       <img src={logo} alt="logo" />
@@ -40,8 +44,11 @@ function FormSignUp1() {
             }, 1000);
           }}
         >
-          {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty, resetForm }) => (
-            <div className="form">
+          {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty, resetForm, handleReset }) => (
+            <form
+              className="form"
+              onSubmit={handleSubmit}
+            >
               <p className="form__label">
                 Gender
               </p>
@@ -145,8 +152,7 @@ function FormSignUp1() {
                 <label className="form__label">E-mail</label>
                 <input
                   className={classNames("form__input", {
-                    "form__input-err": errors.email,
-                    "form__input-norm": !errors.email
+                    "form__input-err": errors.email && touched.email,
                   })}
                   type="email"
                   name="email"
@@ -155,22 +161,22 @@ function FormSignUp1() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {touched.email && errors.email && <p className="form__input-error">{errors.email}</p>}
+                {errors.email && touched.email && <p className="form__input-error">{errors.email}</p>}
               </div>
               <div className="form__inputs">
                 <label className="form__label">Create Password</label>
                 <input
                   className={classNames("form__input", {
-                    "form__input-err": errors.password,
-                    "form__input-norm": !errors.password
+                    "form__input-err": errors.password && touched.password,
                   })}
                   type={visiblePassword ? "text" : "password"}
                   name="password"
                   placeholder="Enter your password"
                   value={values.password}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
-                <button
+                <div
                   onClick={() => setVisiblityPassword(visiblity => !visiblity)}
                   className="form__input-icon"
                 >
@@ -178,23 +184,23 @@ function FormSignUp1() {
                     ? <img src={eye} alt="show" />
                     : <img src={eyeSlash} alt="hide" />
                   }
-                </button>
-                {errors.password && <p className="form__input-error">{errors.password}</p>}
+                </div>
+                {errors.password && touched.password && <p className="form__input-error">{errors.password}</p>}
               </div>
               <div className="form__inputs">
                 <label className="form__label">Confirm Password</label>
                 <input
                   className={classNames("form__input", {
-                    "form__input-err": errors.confirmPassword,
-                    "form__input-norm": !errors.confirmPassword
+                    "form__input-err": errors.confirmPassword && touched.confirmPassword,
                   })}
                   type={visibleConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   placeholder="Confirm your password"
                   value={values.confirmPassword}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
-                <button
+                <div
                   onClick={() => setVisiblityConfirmPassword(visiblity => !visiblity)}
                   className="form__input-icon"
                 >
@@ -202,18 +208,17 @@ function FormSignUp1() {
                     ? <img src={eye} alt="show" />
                     : <img src={eyeSlash} alt="hide" />
                   }
-                </button>
-                {errors.confirmPassword && <p className="form__input-error">{errors.confirmPassword}</p>}
+                </div>
+                {errors.confirmPassword && touched.confirmPassword && <p className="form__input-error">{errors.confirmPassword}</p>}
               </div>
               <button
                 disabled={!isValid && !dirty}
                 className="form__input-btn"
                 type="submit"
-                onClick={handleSubmit}
               >
                 Sign Up
               </button>
-            </div>
+            </form>
           )}
         </Formik>
       </div>
@@ -229,16 +234,20 @@ function FormSignUp1() {
         </p>
         <p className="footer__input-login">
           Review privacy and disclosures&nbsp;
-          <a
-            className="footer__input-link"
-            href="#form-inputs"
+          <span
+            className="footer__input-link--modal"
+            onClick={() => setModalActive(true)}
           >
             here
-          </a>
+          </span>
         </p>
+        <ModalInfo
+          active={modalActive}
+          setActive={setModalActive}
+        />
       </div>
     </>
   );
 }
 
-export default FormSignUp1;
+export default FormSignUp;
