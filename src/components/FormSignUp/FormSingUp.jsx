@@ -6,8 +6,10 @@ import * as yup from "yup";
 import logo from "../../images/logo.png";
 import eye from "../../images/eye.svg";
 import eyeSlash from "../../images/eye-slash.svg";
+import "./FormSignUp.scss"
 
 function FormSignUp() {
+  const [validateAfterSubmit, setValidateAfterSubmit] = useState(false);
   const [visiblePassword, setVisiblityPassword] = useState(false);
   const [visibleConfirmPassword, setVisiblityConfirmPassword] = useState(false);
   const [modalActive, setModalActive] = useState(false);
@@ -35,16 +37,20 @@ function FormSignUp() {
             password: "",
             confirmPassword: ""
           }}
-          validateOnBlur
+          validateOnBlur={false}
+          validateOnChange={validateAfterSubmit}
           validationSchema={validationsShema}
           onSubmit={(values, actions) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               actions.setSubmitting(false);
+              actions.resetForm();
+              setVisiblityPassword(false);
+              setVisiblityConfirmPassword(false)
             }, 1000);
           }}
         >
-          {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty, resetForm, handleReset }) => (
+          {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
             <form
               className="form"
               onSubmit={handleSubmit}
@@ -215,6 +221,9 @@ function FormSignUp() {
                 disabled={!isValid && !dirty}
                 className="form__input-btn"
                 type="submit"
+                onClick={() => {
+                  setValidateAfterSubmit(true);
+                }}
               >
                 Sign Up
               </button>
