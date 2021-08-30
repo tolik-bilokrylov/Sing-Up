@@ -1,4 +1,6 @@
-[DEMO LINK]https://tolik-bilokrylov.github.io/Sing-Up/).
+[DEMO LINK](https://tolik-bilokrylov.github.io/Sing-Up/)
+
+[FIGMA](https://www.figma.com/file/N90535xMelza7jSgvsS9aX/Task-Doc-Registration)
 
 Application using React vs Hooks, SCSS and Formik;
 
