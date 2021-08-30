@@ -10,3 +10,5 @@ Implement validations:
 - password confirmation: required + equality with password
 
 Implement button show or hide password;
+
+Implement modal window whan click on "here"
