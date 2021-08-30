@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Sing-Up/static/css/main.aa285b16.chunk.css",
-    "main.js": "/Sing-Up/static/js/main.f9af3fc2.chunk.js",
-    "main.js.map": "/Sing-Up/static/js/main.f9af3fc2.chunk.js.map",
+    "main.css": "/Sing-Up/static/css/main.b00207ad.chunk.css",
+    "main.js": "/Sing-Up/static/js/main.b34af7d7.chunk.js",
+    "main.js.map": "/Sing-Up/static/js/main.b34af7d7.chunk.js.map",
     "runtime-main.js": "/Sing-Up/static/js/runtime-main.0e4bb534.js",
     "runtime-main.js.map": "/Sing-Up/static/js/runtime-main.0e4bb534.js.map",
-    "static/js/2.32d7dfa9.chunk.js": "/Sing-Up/static/js/2.32d7dfa9.chunk.js",
-    "static/js/2.32d7dfa9.chunk.js.map": "/Sing-Up/static/js/2.32d7dfa9.chunk.js.map",
+    "static/js/2.7e7f370a.chunk.js": "/Sing-Up/static/js/2.7e7f370a.chunk.js",
+    "static/js/2.7e7f370a.chunk.js.map": "/Sing-Up/static/js/2.7e7f370a.chunk.js.map",
     "index.html": "/Sing-Up/index.html",
-    "static/css/main.aa285b16.chunk.css.map": "/Sing-Up/static/css/main.aa285b16.chunk.css.map",
-    "static/js/2.32d7dfa9.chunk.js.LICENSE.txt": "/Sing-Up/static/js/2.32d7dfa9.chunk.js.LICENSE.txt",
+    "static/css/main.b00207ad.chunk.css.map": "/Sing-Up/static/css/main.b00207ad.chunk.css.map",
+    "static/js/2.7e7f370a.chunk.js.LICENSE.txt": "/Sing-Up/static/js/2.7e7f370a.chunk.js.LICENSE.txt",
     "static/media/eye-slash.0bed875c.svg": "/Sing-Up/static/media/eye-slash.0bed875c.svg",
     "static/media/eye.8e7e265e.svg": "/Sing-Up/static/media/eye.8e7e265e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0e4bb534.js",
-    "static/js/2.32d7dfa9.chunk.js",
-    "static/css/main.aa285b16.chunk.css",
-    "static/js/main.f9af3fc2.chunk.js"
+    "static/js/2.7e7f370a.chunk.js",
+    "static/css/main.b00207ad.chunk.css",
+    "static/js/main.b34af7d7.chunk.js"
   ]
 }
